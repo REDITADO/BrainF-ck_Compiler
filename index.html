@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiler</title>
+    <style>
+        #container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+<div id="BF_Container">
+<textarea name="" id="" cols="30" rows="30">
+ ++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++
+ ..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.
+</textarea>
+<button>Execute</button>
+</div>
+<div id="output">
+<textarea name="" id="" cols="30" rows="30"></textarea>
+</div>
+</div>
+</body>
+<script type="module">
+    import BrainFuck from "./Compiler.js"
+    document.querySelector("button").addEventListener("click",()=>{
+        const brainInput = document.querySelector("#BF_Container textarea").value
+
+        document.querySelector("#output textarea").innerHTML =   BrainFuck(brainInput )
+    })
+  
+</script>
+</html>
